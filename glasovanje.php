@@ -1,7 +1,13 @@
 <?php
+session_start();
 require 'server_data.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_SESSION['last_vote_time']) && (time() - $_SESSION['last_vote_time']) < 60) {
+    header("Location: /hvala_glasovanje.php?message=Tvoj glas smo že zabeležili.");
+    die();
+  }  
+
   try {
     $ID = $_POST["Qid"];
     $odgovor = $_POST["odgovor"];
@@ -36,11 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
       $conn->close();
     }
+    $_SESSION['last_vote_time'] = time();
   }
   catch(Exception $e) {
     echo 'Prislo je do napake: ' .$e->getMessage();
   }
 }
-header("Location: /hvala_glasovanje.html");
+header("Location: /hvala_glasovanje.php");
 die();
 ?>

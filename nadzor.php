@@ -151,7 +151,7 @@ $view = file_get_contents("pogled.txt");
       <h2 class="mt-4">Prijave v kviz</h2>
       <p>Najnovejše prijave na vrhu. Vnos pobriši samo po koncu kviza. Tekmovalca izberi s klikom na njegovo ime.</p>
 
-      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
           <?php
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {

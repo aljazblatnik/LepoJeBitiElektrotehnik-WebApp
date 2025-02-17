@@ -94,6 +94,9 @@
   </head>
 
   <script>
+    if (localStorage.getItem("ljbe_glasovanje") === null) {
+        localStorage.setItem('ljbe_glasovanje', new Date());
+    }
     const interval = setInterval(function() {
       if (localStorage.getItem("ljbe_glasovanje") === null) {
         localStorage.setItem('ljbe_glasovanje', new Date());
@@ -119,12 +122,20 @@
         <main class="px-3">
           <!-- Oddaja glasu -->
           <h1>Hvala!</h1>
-          <p class="lead">Glas je oddan!</p>
+          <?php if (!isset($_GET['message'])): ?>
+            <p class="lead">Glas je oddan!</p>
+          <?php endif; ?>
           <!-- END Oddaja glasu -->
+
+          <!-- Display message if exists -->
+          <?php if (isset($_GET['message'])): ?>
+            <p class="lead"><?php echo $_GET['message']; ?></p>
+          <?php endif; ?>
+
         </main>
 
         <footer class="mt-auto text-white-50">
-          <p>UL FE 2024</p>
+          <p>UL FE 2025</p>
         </footer>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

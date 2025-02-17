@@ -97,7 +97,9 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
+
   </head>
+  
 
   <?php
   $view = file_get_contents("pogled.txt");
@@ -131,7 +133,7 @@
             <!-- neaktivno -->
             <main class="px-3">
                 <h1>Ni aktivnosti</h1>
-                <p class="lead">Trenutno v kvizu ni možnosti za sodelovanje.</p>
+                <p class="lead">Trenutno ni možnosti za sodelovanje.</p>
             </main>
             <!-- END Neaktivno -->
           <?php
@@ -217,7 +219,7 @@
           }
         ?>
         <footer class="mt-auto text-white-50">
-          <p>UL FE 2024</p>
+          <p>UL FE 2025</p>
         </footer>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
